@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM jrottenberg/ffmpeg:4.4-nvidia
 RUN apt update
 RUN apt upgrade -y
 RUN apt install ca-certificates -y
@@ -41,4 +41,4 @@ RUN chmod +x /usr/bin/xteve
 EXPOSE 34400
 
 # Entrypoint
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["bash", "/entrypoint.sh"]
